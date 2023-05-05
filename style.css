@@ -3,21 +3,63 @@
 }
 
 :root {
+  --size-main: 71.3vmin;
+  --size-inner-div: 30vmin;
 }
 
 html {
-  font-family: ;
   direction: ltr;
-  font-size: ;
+  font-size: 20px;
 }
 
 body {
   margin: 0;
-  height: ;
-  background-color: var(--page-background-color);
-  color: var(--page-text-color);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Fallbacks für manche Styles benutzen, S.13 unten */
+main {
+  width: var(--size-main);
+  height: var(--size-main);
+  border: 0.65vmin solid black;
+  border-radius: 0.65vmin;
+}
 
-/* Füge media queries ein, S.15 unten*/
+.outer-div {
+  width: 100%;
+  height: 100%;
+  border: 4vmin solid rgb(128, 128, 128, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.inner-one {
+  position: absolute;
+  left: 13vmin;
+  top: 14vmin;
+  width: var(--size-inner-div);
+  height: var(--size-inner-div);
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 0, 1) 50%,
+    rgba(255, 255, 0, 0) 50%
+  );
+}
+
+.inner-two {
+  position: absolute;
+  width: var(--size-inner-div);
+  height: calc(var(--size-inner-div) - 1vmin);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.inner-smalls {
+  height: 1.5vmin;
+  background-color: black;
+}
